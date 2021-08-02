@@ -1,5 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
+import e from "express";
 function InputCard(){
     const [data,setdata]=useState('');
       const [btntext,setbtntsxt]=useState('Click Here');
@@ -18,8 +19,13 @@ function InputCard(){
           setbtntsxt('Copy to Clipboard')
        }).catch(err=>console.log(err)); 
        }else{
-         navigator.clipboard.writeText(data);
          
+        try {
+          await navigator.clipboard.writeText(location.href);
+          console.log('Page URL copied to clipboard');
+        } catch (err) {
+          console.error('Your browser has trouble in copying to clipboard, kindy copy them manually.');
+        }
          setdata('');
          setbtntsxt('Click Here');
          alert("Text copied to clipboard");

@@ -9,7 +9,7 @@ app.use(cors())
 app.use(express.json())
 app.use(express.static(path.resolve(__dirname, "./client/build")));
 
-const PORT = process.env.PORT ||8000
+const PORT = process.env.PORT ||3001
 
 app.post("/geturl",(req,res)=>{
     const url=req.body.data;

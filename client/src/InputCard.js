@@ -4,13 +4,18 @@ function InputCard(){
     const [data,setdata]=useState('');
       const [btntext,setbtntsxt]=useState('Click Here');
     function senddata(){
+      
        if(btntext==="Click Here"){
-         axios.post('http://localhost:3001/geturl',{
-           data,
-       }).then((val)=>{
+        axios('http://localhost:3001/geturl', {
+          method: 'POST',
+          headers: {
+            'content-type': 'application/json',
+          },
+          data:{data},
+        }).then((val)=>{
           setdata(val.data);
           setbtntsxt('Copy to Clipboard')
-       }).catch(err=>console.log(err));
+       }).catch(err=>console.log(err)); 
        }else{
          navigator.clipboard.writeText(data);
          

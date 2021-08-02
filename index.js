@@ -14,9 +14,9 @@ const PORT = process.env.PORT || 3001
 app.post("/geturl",(req,res)=>{
     const url=req.body.data;
    
-    shortUrl.short(url, function(err, url){
-        console.log(url);
-   res.send(url);
+    shortUrl.short(url, function(err, myurl){
+        console.log(myurl);
+        res.send(myurl);
 });
 });
 app.get("*", function (request, response) {

@@ -1,5 +1,5 @@
 import InputCard from "./InputCard";
-import "./style.css"
+import "client/src/style.css"
 function App() {
   return (
     <div className="card">

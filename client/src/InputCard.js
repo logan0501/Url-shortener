@@ -1,10 +1,10 @@
 import { useState } from "react";
 import axios from "axios";
-import e from "express";
+
 function InputCard(){
     const [data,setdata]=useState('');
       const [btntext,setbtntsxt]=useState('Click Here');
-   async function senddata(){
+async function senddata(){
       
        if(btntext==="Click Here"){
         axios('/geturl', {
@@ -21,7 +21,7 @@ function InputCard(){
        }else{
          
         try {
-          await navigator.clipboard.writeText(location.href);
+          await navigator.clipboard.writeText(data);
           console.log('Page URL copied to clipboard');
         } catch (err) {
           console.error('Your browser has trouble in copying to clipboard, kindy copy them manually.');

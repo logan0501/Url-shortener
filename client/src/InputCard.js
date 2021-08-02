@@ -9,6 +9,7 @@ function InputCard(){
         axios('http://localhost:3001/geturl', {
           method: 'POST',
           headers: {
+            'Access-Control-Allow-Origin' : '*',
             'content-type': 'application/json',
           },
           data:{data},

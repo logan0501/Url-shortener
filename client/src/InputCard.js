@@ -6,13 +6,13 @@ function InputCard(){
     function senddata(){
       
        if(btntext==="Click Here"){
-        axios('http://localhost:3001/geturl', {
+        axios('/geturl', {
           method: 'POST',
           headers: {
             'Access-Control-Allow-Origin' : '*',
             'content-type': 'application/json',
           },
-          body:JSON.stringify({data}),
+          body:{data},
         }).then((val)=>{
           setdata(val.data);
           setbtntsxt('Copy to Clipboard')

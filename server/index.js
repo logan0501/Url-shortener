@@ -27,4 +27,4 @@ app.post('/',(req,res)=>{
     console.log("got a shock");
     res.json({data:"hello"});
 })
-app.listen(PORT,console.log(`Server started at port ${PORT}`));
+app.listen(PORT,()=>{console.log(`Server started at port ${PORT}`)});

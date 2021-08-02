@@ -4,7 +4,7 @@ import e from "express";
 function InputCard(){
     const [data,setdata]=useState('');
       const [btntext,setbtntsxt]=useState('Click Here');
-    function senddata(){
+   async function senddata(){
       
        if(btntext==="Click Here"){
         axios('/geturl', {

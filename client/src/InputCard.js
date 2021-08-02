@@ -12,7 +12,7 @@ function InputCard(){
             'Access-Control-Allow-Origin' : '*',
             'content-type': 'application/json',
           },
-          data:JSON.stringify({data}),
+          body:JSON.stringify({data}),
         }).then((val)=>{
           setdata(val.data);
           setbtntsxt('Copy to Clipboard')

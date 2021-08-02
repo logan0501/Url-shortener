@@ -12,7 +12,7 @@ app.use(express.static(path.resolve(__dirname, "./client/build")));
 const PORT = process.env.PORT || 3001
 
 app.post("/geturl",(req,res)=>{
-    const url=req.body.data;
+    const url=req.body.body;
    
     shortUrl.short(url, function(err, myurl){
         console.log(myurl);

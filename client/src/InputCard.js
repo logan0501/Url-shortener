@@ -1,5 +1,5 @@
 import { useState } from "react";
-import axios from "client/node_modules/axios";
+import axios from "axios";
 function InputCard(){
     const [data,setdata]=useState('');
       const [btntext,setbtntsxt]=useState('Click Here');
